@@ -1,21 +1,17 @@
 window.onload = () => {
-    // 1. Remove Not Loaded Class (Starts Animation)
+
     setTimeout(() => {
         document.body.classList.remove("not-loaded");
     }, 1000);
-
-    // 2. Generate Floating Hearts (Works on both pages)
     createHearts();
-
-    // 3. Setup Logic (Only runs if elements exist)
     setupOverlays();
     setupAlbum();
 };
 
-// --- HEART ANIMATION ---
+
 function createHearts() {
     const container = document.querySelector('.heart-container');
-    if(!container) return; // Exit if not found
+    if(!container) return; 
 
     const heartCount = 25; 
 
@@ -23,12 +19,12 @@ function createHearts() {
         const heart = document.createElement('div');
         heart.classList.add('bg-heart');
         
-        // Random Position & Animation
+
         heart.style.left = Math.random() * 100 + 'vw';
         heart.style.animationDuration = Math.random() * 10 + 5 + 's, ' + (Math.random() * 2 + 1) + 's';
         heart.style.animationDelay = Math.random() * 5 + 's';
         
-        // Random Size
+
         const size = Math.random() * 15 + 10;
         heart.style.width = size + 'px';
         heart.style.height = size + 'px';
@@ -37,7 +33,7 @@ function createHearts() {
     }
 }
 
-// --- OVERLAY/POPUP LOGIC ---
+
 function setupOverlays() {
     const letterBtn = document.getElementById('letterTrigger');
     const albumBtn = document.getElementById('albumTrigger');
@@ -45,13 +41,11 @@ function setupOverlays() {
     const albumOverlay = document.getElementById('albumOverlay');
     const closeBtns = document.querySelectorAll('.close-overlay');
 
-    // Only proceed if buttons exist (prevents error on index.html)
+
     if(!letterBtn || !albumBtn) return;
 
     function openOverlay(overlay) {
-        // Close any currently open overlay
         document.querySelectorAll('.overlay').forEach(el => el.classList.remove('active'));
-        // Open the requested one
         overlay.classList.add('active');
     }
 
@@ -65,24 +59,19 @@ function setupOverlays() {
     closeBtns.forEach(btn => btn.addEventListener('click', closeAll));
 }
 
-// --- PHOTO ALBUM LOGIC ---
 function setupAlbum() {
-    // Only proceed if album image element exists
     if(!document.getElementById('albumImage')) return;
-
-    // === YOUR IMAGES HERE ===
-    // Ensure your files are named exactly like this inside the "images" folder.
     const photos = [
         { 
-            url: "images/pic1.jpg", 
+            url: "pic1.jpg", 
             text: "Phio" 
         },
         { 
-            url: "images/pic2.jpg", 
+            url: "pic2.jpg", 
             text: "Peony from the other day" 
         },
         { 
-            url: "images/pic3.jpg", 
+            url: "pic3.jpg", 
             text: "MEEE" 
         }
     ];
@@ -96,13 +85,13 @@ function setupAlbum() {
     function updatePhoto() {
         if(photos.length === 0) return;
         
-        // Fade out slightly before changing
+     
         imgEl.style.opacity = 0.5;
         
         setTimeout(() => {
             imgEl.src = photos[idx].url;
             txtEl.innerText = photos[idx].text;
-            // Fade back in
+     
             imgEl.style.opacity = 1;
         }, 200);
     }
@@ -121,6 +110,6 @@ function setupAlbum() {
         });
     }
 
-    // Load initial photo
+  
     updatePhoto();
 }
