@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for the "I Love You" text -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <title>Flowers For You</title>
+</head>
+
+<body class="not-loaded">
+  
+  <!-- 1. The Fixed Gradient Background (Lowest Layer) -->
+  <div class="day-background"></div>
+
+  <!-- 2. The Floating Hearts (Middle Layer) -->
+  <div class="heart-container"></div>
+
+  <!-- 3. Big "I Love You" Title -->
+  <h1 class="main-title">I Love You</h1>
+
+  <!-- 4. Flowers -->
+  <div class="flowers">
+    <!-- Flower 1 -->
+    <div class="flower flower--1">
+      <div class="flower__leafs flower__leafs--1">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <!-- Flower 2 -->
+    <div class="flower flower--2">
+      <div class="flower__leafs flower__leafs--2">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <!-- Flower 3 -->
+    <div class="flower flower--3">
+      <div class="flower__leafs flower__leafs--3">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. UI Dock -->
+  <div class="glass-dock">
+    <button class="dock-btn" id="letterTrigger"><i class="fa-regular fa-envelope"></i></button>
+    <div class="separator"></div>
+    <button class="dock-btn" id="albumTrigger"><i class="fa-regular fa-images"></i></button>
+  </div>
+
+  <!-- 6. Overlays -->
+  <div class="overlay" id="letterOverlay">
+    <button class="close-overlay"><i class="fa-solid fa-xmark"></i></button>
+    <div class="letter-container">
+      <div class="letter-content">
+        <h2>My Dearest,</h2>
+        <p>I hope these flowers are what you requested, I tried my best to make it look the same<br><br> Your hubby,<br>Zhen²</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="albumOverlay">
+    <button class="close-overlay"><i class="fa-solid fa-xmark"></i></button>
+    <div class="polaroid-wrapper">
+      <div class="polaroid-frame">
+        <img id="albumImage" src="" alt="Memory">
+        <div class="polaroid-caption" id="albumCaption"></div>
+      </div>
+      <div class="album-nav">
+        <button id="prevPhoto" class="nav-arrow"><i class="fa-solid fa-arrow-left-long"></i></button>
+        <button id="nextPhoto" class="nav-arrow"><i class="fa-solid fa-arrow-right-long"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
