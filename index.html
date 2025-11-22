@@ -4,19 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
-  <!-- Use style.css to share the background logic -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
   <title>A Gift For You</title>
 </head>
 
 <body>
-  <!-- Heart Background Container -->
   <div class="heart-container"></div>
-
-  <!-- Title -->
   <h1 class="title">For Someone Special</h1>
-
-  <!-- Button -->
   <div class="start-btn-container">
     <a href="flower.html" class="btn">
       <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" class="sparkle">
@@ -27,25 +21,20 @@
   </div>
 
   <script>
-    // Script to generate floating hearts
     window.onload = function() {
         const container = document.querySelector('.heart-container');
-        const heartCount = 20; // Number of hearts
+        const heartCount = 20; 
 
         for (let i = 0; i < heartCount; i++) {
             const heart = document.createElement('div');
             heart.classList.add('bg-heart');
             
-            // Random Horizontal Position
             heart.style.left = Math.random() * 100 + 'vw';
             
-            // Random Animation Duration (Between 5s and 12s)
             heart.style.animationDuration = Math.random() * 7 + 5 + 's, ' + (Math.random() * 2 + 1) + 's';
             
-            // Random Delay
             heart.style.animationDelay = Math.random() * 5 + 's';
             
-            // Random Size (Between 10px and 25px)
             const size = Math.random() * 15 + 10;
             heart.style.width = size + 'px';
             heart.style.height = size + 'px';
